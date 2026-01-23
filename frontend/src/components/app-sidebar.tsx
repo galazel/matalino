@@ -1,28 +1,30 @@
-import * as React from "react"
+import * as React from "react";
 import {
   AudioWaveform,
-  BookOpen,
-  Bot,
+  Coins,
   Command,
   Frame,
   GalleryVerticalEnd,
   Map,
-  PieChart,
+  MessageCircle,
+  Notebook,
+  NotebookPen,
   Settings2,
-  SquareTerminal,
-} from "lucide-react"
+  User,
+} from "lucide-react";
 
-import { NavMain } from "@/components/nav-main"
-import { NavProjects } from "@/components/nav-projects"
-import { NavUser } from "@/components/nav-user"
-import { TeamSwitcher } from "@/components/team-switcher"
+import { NavMain } from "@/components/nav-main";
+import { NavProjects } from "@/components/nav-projects";
+import { NavUser } from "@/components/nav-user";
+import { TeamSwitcher } from "@/components/team-switcher";
 import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
   SidebarHeader,
   SidebarRail,
-} from "@/components/ui/sidebar"
+} from "@/components/ui/sidebar";
+
 
 // This is sample data.
 const data = {
@@ -50,9 +52,9 @@ const data = {
   ],
   navMain: [
     {
-      title: "Playground",
+      title: "Account",
       url: "#",
-      icon: SquareTerminal,
+      icon: User,
       isActive: true,
       items: [
         {
@@ -70,9 +72,9 @@ const data = {
       ],
     },
     {
-      title: "Models",
+      title: "Subscriptions",
       url: "#",
-      icon: Bot,
+      icon: Coins,
       items: [
         {
           title: "Genesis",
@@ -89,9 +91,9 @@ const data = {
       ],
     },
     {
-      title: "Documentation",
+      title: "Community Hub",
       url: "#",
-      icon: BookOpen,
+      icon: MessageCircle,
       items: [
         {
           title: "Introduction",
@@ -137,22 +139,27 @@ const data = {
   ],
   projects: [
     {
-      name: "Design Engineering",
+      name: "Dashboard",
       url: "#",
       icon: Frame,
     },
     {
-      name: "Sales & Marketing",
+      name: "Lessons",
       url: "#",
-      icon: PieChart,
+      icon: NotebookPen,
     },
     {
-      name: "Travel",
+      name: "Exams",
       url: "#",
       icon: Map,
     },
+    {
+      name: "Notes",
+      url: "#",
+      icon: Notebook,
+    },
   ],
-}
+};
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
@@ -161,13 +168,13 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <TeamSwitcher teams={data.teams} />
       </SidebarHeader>
       <SidebarContent>
-        <NavMain items={data.navMain} />
         <NavProjects projects={data.projects} />
+        <NavMain items={data.navMain} />
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={data.user} />
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>
-  )
+  );
 }

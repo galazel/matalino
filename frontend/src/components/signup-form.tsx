@@ -93,7 +93,7 @@ export function SignupForm({
                 </Button>
               </Field>
               <FieldDescription className="text-center">
-                Already have an account? <a href="#" onClick={() => setPage(true)}>Sign in</a>
+                Already have an account? <a onClick={() => setPage(true)}>Sign in</a>
               </FieldDescription>
             </FieldGroup>
           </form>

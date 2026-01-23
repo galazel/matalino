@@ -5,10 +5,13 @@ import svgPathsFeatures from "../imports/svg-48lrdcdkae";
 import svgPathsTestimonials from "../imports/svg-y93vsfvrlq";
 import svgPathsFaq from "../imports/svg-2sgu3hho7r";
 import svgPathsCta from "../imports/svg-fd87zquymr";
+import { useNavigate } from 'react-router-dom';
 
 // ============ HERO SECTION ============
 
 function Gradient() {
+  
+
   return (
     <div className="h-[2021.402px] relative w-504.75" data-name="Gradient">
       <div className="absolute inset-[-17.63%_-8.23%_-4.22%_-4.25%]">
@@ -167,6 +170,7 @@ function Gradient1() {
 }
 
 function HeroSection() {
+  const navigate = useNavigate();
   return (
     <div className="bg-white relative w-full overflow-hidden" data-name="Hero">
       {/* Background Gradient - Fixed positioning */}
@@ -196,7 +200,7 @@ function HeroSection() {
 
         {/* Register Button */}
         <button className="backdrop-blur-[5px] flex gap-4 items-center justify-center pl-6 pr-1 py-1 rounded-[100px] border border-solid border-white hover:bg-white/20 transition-all group">
-          <p className="font-sans font-bold text-[16px] text-white">Register Now</p>
+          <p className="font-sans font-bold text-[16px] text-white" onClick={() => navigate('/account')}>Register Now</p>
           <div className="bg-white flex items-center justify-center p-5 rounded-[100px] size-10 group-hover:scale-110 transition-transform">
             <svg className="block size-6" fill="none" preserveAspectRatio="none" viewBox="0 0 12.021 12.021">
               <path d={svgPathsHero.pef3ef00} fill="#0066FF" />
