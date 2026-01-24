@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: ai-tools_service
+  mongodb:
+    uri: ${MONGO_URL}
+    password: ${MONGO_PASS}
+    username: ${MONGO_USER}
+server:
+  port: 8083
+
