@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/")
 class AuthController {
 
-    @GetMapping
+    @GetMapping("user/{id}")
     public String auth() {
         return "Helllo";
     }

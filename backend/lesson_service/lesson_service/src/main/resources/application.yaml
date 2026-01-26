@@ -1,9 +1,18 @@
 spring:
   application:
     name: lesson_service
-  mongodb:
-    uri: ${MONGO_URL}
-    password: ${MONGO_PASS}
-    username: ${MONGO_USER}
+
+  data:
+    mongodb:
+      uri: ${MONGO_URL}
 server:
   port: 8082
+
+
+eureka:
+  client:
+    register-with-eureka: true
+    serviceUrl:
+      defaultZone: http://discovery-server:8761/eureka/
+
+
