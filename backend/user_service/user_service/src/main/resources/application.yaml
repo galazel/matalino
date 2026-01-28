@@ -25,7 +25,7 @@ eureka:
 resilience4j:
   circuit breaker:
     instances:
-      user-service-breaker:
+      userServiceBreaker:
         sliding-window-type: COUNT_BASED
         sliding-window-size: 10
         minimum-number-of-calls: 5
@@ -33,13 +33,6 @@ resilience4j:
         wait-duration-in-open-state: 30
         permitted-number-of-calls-in-half-open-state: 5
 
-  retry:
-    instances:
-      user-service-breaker:
-        max-attempts: 3
-        wait-duration: 5s
-        retry-exceptions:
-          - java.lang.Throwable
 
 
 
