@@ -1,10 +1,9 @@
 spring:
   application:
-    name: lesson_service
+    name: lesson-service
 
-  data:
-    mongodb:
-      uri: ${MONGO_URL}
+  mongodb:
+    uri: ${MONGO_URL}
 server:
   port: 8082
 

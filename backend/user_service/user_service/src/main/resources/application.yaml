@@ -22,6 +22,28 @@ eureka:
       defaultZone: http://discovery-server:8761/eureka/
 
 
+resilience4j:
+  circuit breaker:
+    instances:
+      user-service-breaker:
+        sliding-window-type: COUNT_BASED
+        sliding-window-size: 10
+        minimum-number-of-calls: 5
+        failure-rate-threshold: 50
+        wait-duration-in-open-state: 30
+        permitted-number-of-calls-in-half-open-state: 5
+
+  retry:
+    instances:
+      user-service-breaker:
+        max-attempts: 3
+        wait-duration: 5s
+        retry-exceptions:
+          - java.lang.Throwable
+
+
+
+
 
 
 

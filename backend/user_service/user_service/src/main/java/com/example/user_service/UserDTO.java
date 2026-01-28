@@ -1,4 +1,8 @@
 package com.example.user_service;
 
-public record UserDTO(int id, String username) {
+
+import java.util.List;
+
+public record UserDTO(int id, String username, List<SubjectDTO> subjectList) {
+
 }

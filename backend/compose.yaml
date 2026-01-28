@@ -15,13 +15,6 @@ services:
     ports:
       - "3306:3306"
 
-  mongo-db:
-    image: mongo
-    env_file:
-      - .env
-    ports:
-      - "27017:27017"
-
   discovery-server:
     build:
       context: ./discovery-server/discovery-server
@@ -32,8 +25,9 @@ services:
     build:
       context: ./ai-tools_service/ai-tools_service
     depends_on:
-      - mongo-db
       - discovery-server
+    env_file:
+      - .env
     ports:
       - "8083:8083"
 
@@ -41,7 +35,6 @@ services:
     build:
       context: ./lesson_service/lesson_service
     depends_on:
-      - mongo-db
       - discovery-server
     env_file:
       - .env
